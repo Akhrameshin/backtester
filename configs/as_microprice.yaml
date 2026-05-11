@@ -1,0 +1,33 @@
+strategy: as_microprice
+
+data:
+  lob_path: data/lob.csv
+  trades_path: data/trades.csv
+  n_levels: 5
+  max_rows: null
+
+calibration:
+  use_data: true
+  sigma_override: null
+  kappa_override: null
+
+microprice:
+  mode: fitted
+  n_imbalance_bins: 6
+  spread_levels: 4
+  tick: 0.000001
+
+strategy_params:
+  gamma: 50.0
+  T_seconds: 60.0
+  order_size: 1000.0
+  tick: 0.000001
+  min_half_spread: 0.000001
+
+engine:
+  liquidate_at_end: true
+  max_inventory: 1.0e7
+
+output:
+  out_dir: results/as_microprice
+  label: as_microprice
